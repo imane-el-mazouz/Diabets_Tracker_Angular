@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 import { UserService } from '../user-service.service';
 import { User } from '../../model/user';
 
@@ -9,7 +9,7 @@ import { User } from '../../model/user';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css'],
   standalone: true,
-  imports: [FormsModule]
+  imports: [FormsModule, RouterOutlet]
 })
 export class UserFormComponent {
   user: User;
