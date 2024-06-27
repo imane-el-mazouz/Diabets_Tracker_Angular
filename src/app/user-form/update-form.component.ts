@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 import { UserService } from '../user-service.service';
@@ -29,4 +29,8 @@ export class UserFormComponent {
   gotoUserList() {
     this.router.navigate(['/users']);
   }
+
+}
+
+export class UpdateUserComponent {
 }

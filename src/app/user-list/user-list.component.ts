@@ -27,4 +27,10 @@ export class UserListComponent implements OnInit {
       this.users = this.users.filter(user => user.id !== id);
     });
   }
+
+  updateUser(id: number, user: User): void {
+    this.userService.updateUser(id, user).subscribe(()=> {
+      this.users = this.users.filter(user => user.id !== id);
+    });
+  }
 }
