@@ -1,0 +1,30 @@
+<main class="main">
+  <div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Value</th>
+          <th scope="col">Unit</th>
+          <th scope="col">Date</th>
+          <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let glycemie of glycemies">
+          <td>{{ glycemie.id }}</td>
+          <td>{{ glycemie.value }}</td>
+          <td>{{ glycemie.unit}}</td>
+          <td>{{ glycemie.date}}</td>
+          <td>
+            <button class="btn btn-danger" type="button" (click)="deleteGlycemie(glycemie.id)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+<router-outlet></router-outlet>
+
