@@ -1,0 +1,10 @@
+.main {
+  margin-top: 60px;
+  padding-bottom: 60px; /* Ensure footer doesn't overlap content */
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}

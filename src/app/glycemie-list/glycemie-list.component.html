@@ -9,6 +9,7 @@
           <th scope="col">Unit</th>
           <th scope="col">Date</th>
           <th scope="col">MealTime</th>
+          <th scope="col">Source</th>
           <th scope="col">Actions</th>
         </tr>
         </thead>
@@ -19,14 +20,19 @@
           <td>{{ glycemie.unit}}</td>
           <td>{{ glycemie.date}}</td>
           <td>{{ glycemie.mealTime}}</td>
+          <td>{{ glycemie.source}}</td>
           <td>
             <button class="btn btn-danger" type="button" (click)="deleteGlycemie(glycemie.id)">Delete</button>
+            <a class="btn btn-primary" [routerLink]="['/update-glycemie/:id', glycemie.id]">Edit</a>
+
           </td>
         </tr>
         </tbody>
       </table>
     </div>
   </div>
+  <app-chart [glycemies]="glycemies"></app-chart>
+  <canvas id="myChart"></canvas>
 </main>
 <router-outlet></router-outlet>
 

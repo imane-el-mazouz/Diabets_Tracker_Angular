@@ -1,0 +1,31 @@
+.card {
+  margin-top: 2rem;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+thead.thead-dark {
+  background-color: #343a40;
+  color: white;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}

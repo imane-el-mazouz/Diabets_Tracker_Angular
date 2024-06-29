@@ -31,7 +31,6 @@
                required #unit ="ngModel">
         <div [hidden]="!unit.pristine" class="alert alert-danger">date is required</div>
       </div>
-
       <div class="form-group">
         <label for="mealTime">MealTime</label>
         <input type="text" [(ngModel)]="glycemie.mealTime"
@@ -42,9 +41,18 @@
                required #mealTime ="ngModel">
         <div [hidden]="!mealTime.pristine" class="alert alert-danger">MealTime is required</div>
       </div>
+      <div class="form-group">
+        <label for="source">source</label>
+        <input type="text" [(ngModel)]="glycemie.source"
+               class="form-control"
+               id="source"
+               name="source"
+               placeholder="What's your source "
+               required #source ="ngModel">
+        <div [hidden]="!source.pristine" class="alert alert-danger">source is required</div>
+      </div>
       <button type="submit" [disabled]="!glycemieForm.form.valid"
               class="btn btn-info">Submit</button>
-
     </form>
   </div>
 </div>

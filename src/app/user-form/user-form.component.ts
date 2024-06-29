@@ -1,32 +1,37 @@
-import {Component, Input} from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from '../user-service.service';
 import { User } from '../../model/user';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.css'],
   standalone: true,
-  imports: [FormsModule, RouterOutlet]
+  imports: [FormsModule, ReactiveFormsModule],
+  styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent {
-  user: User;
+export class UserFormComponent implements OnInit {
+  userForm: FormGroup;
 
   constructor(
-    private route: ActivatedRoute,
+    private fb: FormBuilder,
     private router: Router,
     private userService: UserService
   ) {
-    this.user = new User();
+    this.userForm = this.fb.group({
+      name: [''],
+      email: ['']
+    });
   }
 
-  onSubmit() {
-    this.userService.save(this.user).subscribe(result => this.gotoUserList());
-  }
+  ngOnInit(): void {}
 
-  gotoUserList() {
-    this.router.navigate(['/users']);
+  onSubmit(): void {
+    if (this.userForm.valid) {
+      this.userService.save(this.userForm.value).subscribe(() => {
+        this.router.navigate(['/users']);
+      });
+    }
   }
 }

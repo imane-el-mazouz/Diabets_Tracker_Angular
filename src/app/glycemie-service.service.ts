@@ -22,11 +22,13 @@ export class GlycemieService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  getGlycemie(id : number): Observable<Glycemie>{
+  getGlycemie(id: number): Observable<Glycemie> {
     return this.http.get<Glycemie>(`${this.apiUrl}/${id}`);
   }
 
-  updateGlycemie(id : number ,glycemie : Glycemie) :Observable<Object> {
-    return this.http.put(`${this.apiUrl}/${id}` ,glycemie)
+  updateGlycemie(id: number, glycemie: Glycemie): Observable<Glycemie> {
+    return this.http.put<Glycemie>(`${this.apiUrl}/${id}`, glycemie);
   }
+
+
 }

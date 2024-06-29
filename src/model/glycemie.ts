@@ -6,5 +6,7 @@ export class Glycemie {
   unit!: string;
   date!: Date;
   mealTime?: string;
+  source?: string;
+
 
 }

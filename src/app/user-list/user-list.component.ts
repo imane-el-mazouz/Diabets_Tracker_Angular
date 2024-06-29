@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { UserService } from '../user-service.service';
 import { User } from '../../model/user';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import {ChartComponent} from "../components/chart/chart.component";
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink]
+  imports: [CommonModule, RouterOutlet, RouterLink ,ChartComponent]
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];
