@@ -23,7 +23,7 @@
           <td>{{ glycemie.source}}</td>
           <td>
             <button class="btn btn-danger" type="button" (click)="deleteGlycemie(glycemie.id)">Delete</button>
-            <a class="btn btn-primary" [routerLink]="['/update-glycemie/:id', glycemie.id]">Edit</a>
+            <a class="btn btn-primary" [routerLink]="['/update-glycemie', glycemie.id]">Update Glycemie</a>
 
           </td>
         </tr>

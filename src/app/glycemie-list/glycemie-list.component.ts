@@ -21,9 +21,9 @@ export class GlycemieListComponent  implements OnInit{
   constructor(private glycemieService : GlycemieService) {}
 
   ngOnInit() {
-    this.glycemieService.findAll().subscribe(data =>
-    {
+    this.glycemieService.findAll().subscribe(data => {
       this.glycemies = data;
+      console.log(this.glycemies); // Vérifiez les données dans la console
     });
   }
 

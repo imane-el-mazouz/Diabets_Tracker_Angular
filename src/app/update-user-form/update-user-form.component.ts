@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { UserService } from '../user-service.service';
-import { User } from '../../model/user';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-update-user-form',
   templateUrl: './update-user-form.component.html',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, RouterOutlet],
+  imports: [
+    ReactiveFormsModule
+  ],
   styleUrls: ['./update-user-form.component.css']
 })
 export class UpdateUserFormComponent implements OnInit {
   userForm: FormGroup;
-  id: number;
+  id: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,14 +23,17 @@ export class UpdateUserFormComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.userForm = this.fb.group({
-      name: [''],
-      email: ['']
+      name: ['', Validators.required],
+      email: ['', Validators.required]
     });
   }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id')!;
-    this.loadUserDetails(this.id);
+    this.route.paramMap.subscribe(params => {
+      const idParam = params.get('id');
+      this.id = idParam !== null ? +idParam : 0;
+      this.loadUserDetails(this.id);
+    });
   }
 
   loadUserDetails(id: number): void {

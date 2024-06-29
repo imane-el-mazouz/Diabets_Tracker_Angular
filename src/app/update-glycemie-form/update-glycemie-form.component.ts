@@ -1,61 +1,67 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { GlycemieService } from '../glycemie-service.service';
 import { Glycemie } from '../../model/glycemie';
-import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-update-glycemie-form',
   templateUrl: './update-glycemie-form.component.html',
   standalone: true,
   imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    RouterOutlet
+    ReactiveFormsModule
   ],
-
-
   styleUrls: ['./update-glycemie-form.component.css']
 })
 export class UpdateGlycemieFormComponent implements OnInit {
-  glycemie: Glycemie;
   glycemieForm: FormGroup;
-  id: number;
+  id: number = 0;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private glycemieService: GlycemieService
+    private glycemieService: GlycemieService,
+    private fb: FormBuilder
   ) {
-    this.glycemie = new Glycemie();
-    this.id = 0;
+    this.glycemieForm = this.fb.group({
+      value: ['', Validators.required],
+      unit: ['', Validators.required],
+      date: ['', Validators.required],
+      mealTime: ['', Validators.required],
+      source: ['', Validators.required]
+    });
   }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.loadGlycemieDetails(this.id);
+    this.route.paramMap.subscribe(params => {
+      const idParam = params.get('id');
+      this.id = idParam !== null ? +idParam : 0;
+      this.loadGlycemieDetails(this.id);
+    });
   }
 
   loadGlycemieDetails(id: number): void {
-    this.glycemieService.getGlycemie(id).subscribe(
-      (data) => {
-        this.glycemie = data;
+    this.glycemieService.getGlycemie(id).subscribe({
+      next: (glycemie: Glycemie) => {
+        this.glycemieForm.patchValue(glycemie);
       },
-      (error) => {
-        console.log('Error fetching glycemie details:', error);
+      error: (error: any) => {
+        console.error('Error loading glycemie details:', error);
       }
-    );
+    });
   }
 
   onSubmit(): void {
-    this.glycemieService.updateGlycemie(this.id, this.glycemie).subscribe(
-      () => {
-        console.log('Glycemie updated successfully');
-        this.router.navigate(['/glycemies']);
-      },
-      (error) => {
-        console.log('Error updating glycemie:', error);
-      }
-    );
+    if (this.glycemieForm.valid) {
+      this.glycemieService.updateGlycemie(this.id, this.glycemieForm.value).subscribe({
+        next: () => {
+          console.log('Glycemie updated successfully.');
+          this.router.navigate(['/glycemies']);
+        },
+        error: (error: any) => {
+          console.error('Error updating glycemie:', error);
+        }
+      });
+    }
   }
 }

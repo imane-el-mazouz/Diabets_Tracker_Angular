@@ -25,7 +25,6 @@ export class GlycemieService {
   getGlycemie(id: number): Observable<Glycemie> {
     return this.http.get<Glycemie>(`${this.apiUrl}/${id}`);
   }
-
   updateGlycemie(id: number, glycemie: Glycemie): Observable<Glycemie> {
     return this.http.put<Glycemie>(`${this.apiUrl}/${id}`, glycemie);
   }
