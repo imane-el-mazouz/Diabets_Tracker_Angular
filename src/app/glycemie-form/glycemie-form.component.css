@@ -1,6 +1,4 @@
-/* glycemie.component.css */
 
-/* Style de la carte */
 .card {
   margin-top: 20px;
   padding: 20px;
@@ -10,19 +8,16 @@
   background-color: #f9f9f9;
 }
 
-/* Espacement entre les groupes de formulaire */
 .form-group {
   margin-bottom: 20px;
 }
 
-/* Style des labels */
 .form-label {
   font-weight: bold;
   color: #333;
   margin-bottom: 5px;
 }
 
-/* Style des inputs */
 .form-control {
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -30,7 +25,6 @@
   font-size: 16px;
 }
 
-/* Style du bouton */
 .btn-info {
   background-color: #007bff;
   border-color: #007bff;
@@ -39,15 +33,13 @@
   font-size: 16px;
 }
 
-/* Style des alertes */
 .alert-danger {
   margin-top: 5px;
   padding: 10px;
   border-radius: 5px;
-  display: none; /* Par défaut, les alertes sont cachées */
+  display: none;
 }
 
-/* Animation des alertes */
 .alert-danger.show {
   display: block;
   animation: fadeIn 0.5s;

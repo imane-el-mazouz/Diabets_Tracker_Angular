@@ -1,56 +1,104 @@
+/**
+* Template Name: Medilab
+* Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+* Updated: Jun 14 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
 /*--------------------------------------------------------------
-# Contact Section
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
-/* Contact Section */
-.contact {
-  padding: 100px 0;
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Poppins",  sans-serif;
+  --nav-font: "Raleway",  sans-serif;
 }
 
-.contact .info-item {
-  margin-bottom: 30px;
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #0000be; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #1977cc; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --contrast-color: #ffffff; /* The contrast color is used for elements when the background color is one of the heading, accent, or default colors. Its purpose is to ensure proper contrast and readability when placed over these more dominant colors */
 }
 
-.contact .info-item i {
-  font-size: 2rem;
-  color: #007bff;
-  margin-right: 15px;
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #2c4964;  /* The default color of the main navmenu links */
+  --nav-hover-color: #1977cc; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #2c4964; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #1977cc; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
-.contact form {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
 }
 
-.contact form .form-control {
-  border-radius: 4px;
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
 }
 
-.contact form textarea {
-  border-radius: 4px;
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.contact form button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
 }
 
-.contact form button:hover {
-  background-color: #0056b3;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
 }
-@keyframes animate-loading {
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
   0% {
     transform: rotate(0deg);
   }
@@ -59,9 +107,98 @@
     transform: rotate(360deg);
   }
 }
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.page-title .heading {
+  padding: 80px 0;
+  border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.page-title .heading h1 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.page-title nav {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 94%);
+  padding: 20px 0;
+}
+
+.page-title nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.page-title nav ol li+li {
+  padding-left: 10px;
+}
+
+.page-title nav ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
 section,
 .section {
-  color: #007bff;
+  color: var(--default-color);
   background-color: var(--background-color);
   padding: 60px 0;
   scroll-margin-top: 72px;
@@ -99,7 +236,7 @@ section,
   display: block;
   width: 160px;
   height: 1px;
-  background: color-mix(in srgb, #007bff, transparent 60%);
+  background: color-mix(in srgb, var(--default-color), transparent 60%);
   left: 0;
   right: 0;
   bottom: 1px;
@@ -112,7 +249,7 @@ section,
   display: block;
   width: 60px;
   height: 3px;
-  background: #007bff;
+  background: var(--accent-color);
   left: 0;
   right: 0;
   bottom: 0;
@@ -130,11 +267,24 @@ section,
   width: 100%;
   min-height: calc(100vh - 112px);
   padding: 80px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   overflow: hidden;
+  background-image: url("https://kffhealthnews.org/wp-content/uploads/sites/2/2016/12/physician-770.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero .why-box {
+  color: #007bff;
+  background: aliceblue;
+  padding: 30px;
+  border-radius: 4px;
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hero img {
@@ -167,14 +317,14 @@ section,
 }
 
 .hero .content .why-box {
-  color: #007bff;
-  background: white;
+  color: var(--contrast-color);
+  background: var(--accent-color);
   padding: 30px;
   border-radius: 4px;
 }
 
 .hero .content .why-box h3 {
-  color: #007bff;
+  color: var(--contrast-color);
   font-weight: 700;
   font-size: 34px;
   margin-bottom: 30px;
@@ -185,8 +335,8 @@ section,
 }
 
 .hero .content .why-box .more-btn {
-  color: #007bff;
-  background: color-mix(in srgb, #007bff, transparent 80%);
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--contrast-color), transparent 80%);
   display: inline-block;
   padding: 6px 30px 8px 30px;
   border-radius: 50px;
@@ -198,22 +348,22 @@ section,
 }
 
 .hero .content .why-box .more-btn:hover {
-  background: #007bff;
-  color: #007bff;
+  background: var(--contrast-color);
+  color: var(--accent-color);
 }
 
 .hero .content .icon-box {
   text-align: center;
   border-radius: 10px;
   background: color-mix(in srgb, var(--background-color), transparent 20%);
-  box-shadow: 0px 2px 15px color-mix(in srgb, #007bff, transparent 90%);
+  box-shadow: 0px 2px 15px color-mix(in srgb, var(--default-color), transparent 90%);
   padding: 40px 30px;
   width: 100%;
 }
 
 .hero .content .icon-box i {
   font-size: 40px;
-  color: #007bff;
+  color: var(--accent-color);
 }
 
 .hero .content .icon-box h4 {
@@ -224,7 +374,7 @@ section,
 
 .hero .content .icon-box p {
   font-size: 15px;
-  color: color-mix(in srgb,#007bff, transparent 30%);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 /*--------------------------------------------------------------
@@ -249,7 +399,7 @@ section,
 .about .content ul i {
   flex-shrink: 0;
   font-size: 48px;
-  color:#007bff;
+  color: var(--accent-color);
   margin-right: 20px;
 }
 
@@ -269,7 +419,7 @@ section,
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(#007bff 50%, color-mix(in srgb,#007bff, transparent 75%) 52%);
+  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -288,6 +438,7 @@ section,
   animation-iteration-count: infinite;
   opacity: 1;
   border-radius: 50%;
+  border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
   top: -15%;
   left: -15%;
   background: rgba(198, 16, 0, 0);
@@ -326,6 +477,7 @@ section,
 }
 
 .about .play-btn:hover:after {
+  border-left: 15px solid var(--accent-color);
   transform: scale(20);
 }
 
@@ -345,11 +497,13 @@ section,
 # Stats Section
 --------------------------------------------------------------*/
 .stats {
-  --background-color: color-mix(in srgb, #007bff, transparent 94%);
+  --background-color: color-mix(in srgb, var(--accent-color), transparent 94%);
 }
 
 .stats i {
-  box-shadow: 0px 2px 25px color-mix(in srgb, #007bff, transparent 92%);
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 2px 25px color-mix(in srgb, var(--default-color), transparent 92%);
   width: 54px;
   height: 54px;
   font-size: 24px;
@@ -363,12 +517,13 @@ section,
 }
 
 .stats .stats-item {
+  background-color: var(--contrast-color);
   margin-top: -27px;
   padding: 30px 30px 25px 30px;
   width: 100%;
   position: relative;
   text-align: center;
-  box-shadow: 0px 2px 35px color-mix(in srgb,#007bff, transparent 92%);
+  box-shadow: 0px 2px 35px color-mix(in srgb, var(--default-color), transparent 92%);
   border-radius: 4px;
   z-index: 0;
 }
@@ -378,12 +533,13 @@ section,
   display: block;
   margin: 10px 0;
   font-weight: 700;
-  color: #007bff;
+  color: var(--heading-color);
 }
 
 .stats .stats-item p {
   padding: 0;
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 16px;
 }
 
@@ -392,27 +548,28 @@ section,
 --------------------------------------------------------------*/
 .services .service-item {
   text-align: center;
-  border: 1px solid color-mix(in srgb, #007bff, transparent 85%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
   height: 100%;
 }
 
 .services .service-item .icon {
+  margin: 0 auto;
   width: 64px;
   height: 64px;
-  background: #007bff;
+  background: var(--accent-color);
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin-bottom: 20px;
   transition: 0.3s;
   transform-style: preserve-3d;
 }
 
 .services .service-item .icon i {
-  color: #007bff;
+  color: var(--contrast-color);
   font-size: 28px;
   transition: ease-in-out 0.3s;
 }
@@ -424,7 +581,7 @@ section,
   top: -8px;
   height: 100%;
   width: 100%;
-  background: color-mix(in srgb, #007bff, transparent 80%);
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
   border-radius: 5px;
   transition: all 0.3s ease-out 0s;
   transform: translateZ(-1px);
@@ -443,15 +600,16 @@ section,
 }
 
 .services .service-item:hover {
-  background: #007bff;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .services .service-item:hover .icon {
-  background: #007bff;
+  background: var(--contrast-color);
 }
 
 .services .service-item:hover .icon i {
-  color: #007bff;
+  color: var(--accent-color);
 }
 
 .services .service-item:hover .icon::before {
@@ -460,14 +618,14 @@ section,
 
 .services .service-item:hover h3,
 .services .service-item:hover p {
-  color: #007bff;
+  color: var(--contrast-color);
 }
 
 /*--------------------------------------------------------------
 # Appointment Section
 --------------------------------------------------------------*/
 .appointment {
-  background-color: color-mix(in srgb, #007bff, transparent 94%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 94%);
 }
 
 .appointment .php-email-form {
@@ -539,6 +697,7 @@ section,
 .appointment .php-email-form input:focus,
 .appointment .php-email-form textarea:focus,
 .appointment .php-email-form select:focus {
+  border-color: var(--accent-color);
 }
 
 .appointment .php-email-form input,
@@ -551,6 +710,7 @@ section,
 }
 
 .appointment .php-email-form button[type=submit] {
+  background: var(--accent-color);
   border: 0;
   padding: 10px 35px;
   color: #fff;
@@ -559,7 +719,7 @@ section,
 }
 
 .appointment .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, #007bff 90%, white 15%);
+  background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
 
 /*--------------------------------------------------------------
@@ -577,9 +737,21 @@ section,
   border: 0;
   padding: 12px 15px 12px 0;
   transition: 0.3s;
+  color: var(--default-color);
   border-radius: 0;
+  border-right: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
   font-weight: 600;
   font-size: 15px;
+}
+
+.departments .nav-link:hover {
+  color: var(--accent-color);
+}
+
+.departments .nav-link.active {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-color: var(--background-color);
 }
 
 .departments .tab-pane.active {
@@ -592,6 +764,9 @@ section,
   margin-bottom: 20px;
 }
 
+.departments .details p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
 
 .departments .details p:last-child {
   margin-bottom: 0;
@@ -603,14 +778,17 @@ section,
     padding: 15px;
   }
 
-
+  .departments .nav-link.active {
+    color: var(--accent-color);
+    background: var(--accent-color);
+  }
 }
 
 /*--------------------------------------------------------------
 # Doctors Section
 --------------------------------------------------------------*/
 .doctors .team-member {
-  box-shadow: 0px 2px 15px color-mix(in srgb, #007bff, transparent 90%);
+  box-shadow: 0px 2px 15px color-mix(in srgb, var(--default-color), transparent 90%);
   position: relative;
   border-radius: 5px;
   transition: 0.5s;
@@ -672,7 +850,7 @@ section,
   display: block;
   width: 50px;
   height: 1px;
-  background: color-mix(in srgb, #007bff, transparent 85%);
+  background: color-mix(in srgb, var(--default-color), transparent 85%);
   bottom: 0;
   left: 0;
 }
@@ -703,6 +881,7 @@ section,
 }
 
 .doctors .team-member .social a {
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
   transition: ease-in-out 0.3s;
   display: flex;
   align-items: center;
@@ -713,16 +892,17 @@ section,
 }
 
 .doctors .team-member .social a i {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
   font-size: 16px;
   margin: 0 2px;
 }
 
 .doctors .team-member .social a:hover {
-  background: #007bff;
+  background: var(--accent-color);
 }
 
 .doctors .team-member .social a:hover i {
-  color: #007bff;
+  color: var(--contrast-color);
 }
 
 .doctors .team-member .social a+a {
@@ -733,15 +913,15 @@ section,
 # Faq Section
 --------------------------------------------------------------*/
 .faq {
-  background-color: color-mix(in srgb, #007bff, transparent 94%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 94%);
 }
 
 .faq .faq-container .faq-item {
-  background-color: #007bff;
+  background-color: var(--contrast-color);
   position: relative;
   padding: 20px;
   margin-bottom: 15px;
-  border: 1px solid color-mix(in srgb, #007bff, transparent 75%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
   border-radius: 5px;
   overflow: hidden;
 }
@@ -762,12 +942,12 @@ section,
 }
 
 .faq .faq-container .faq-item h3 .num {
-  color: #007bff;
+  color: var(--accent-color);
   padding-right: 5px;
 }
 
 .faq .faq-container .faq-item h3:hover {
-  color: #007bff;
+  color: var(--accent-color);
 }
 
 .faq .faq-container .faq-item .faq-content {
@@ -794,18 +974,18 @@ section,
 }
 
 .faq .faq-container .faq-item .faq-toggle:hover {
-  color:#007bff;
+  color: var(--accent-color);
 }
 
 .faq .faq-container .faq-active {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: yellow;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .faq .faq-container .faq-active h3,
 .faq .faq-container .faq-active h3:hover {
-  color: #007bff;
+  color: var(--contrast-color);
 }
 
 .faq .faq-container .faq-active .faq-content {
@@ -817,7 +997,7 @@ section,
 
 .faq .faq-container .faq-active .faq-toggle {
   transform: rotate(90deg);
-  color: #007bff;
+  color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
@@ -859,7 +1039,7 @@ section,
 }
 
 .testimonials .testimonial-item h4 {
-  color: color-mix(in srgb, #007bff, transparent 50%);
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 14px;
   margin: 0;
 }
@@ -875,7 +1055,7 @@ section,
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, #007bff, transparent 60%);
+  color: color-mix(in srgb, var(--accent-color), transparent 60%);
   font-size: 26px;
   line-height: 0;
 }
@@ -912,13 +1092,13 @@ section,
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background-color: color-mix(in srgb, #007bff, transparent 85%);
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
   opacity: 1;
   border: none;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #007bff;
+  background-color: var(--accent-color);
 }
 
 @media (max-width: 767px) {
@@ -933,3 +1113,235 @@ section,
   }
 }
 
+/*--------------------------------------------------------------
+# Gallery Section
+--------------------------------------------------------------*/
+.gallery .gallery-item {
+  overflow: hidden;
+  border-right: 3px solid var(--background-color);
+  border-bottom: 3px solid var(--background-color);
+}
+
+.gallery .gallery-item img {
+  transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item+.info-item {
+  margin-top: 40px;
+}
+
+.contact .info-item i {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 20px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.contact .info-item h3 {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.contact .php-email-form {
+  height: 100%;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: var(--background-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--background-color);
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 36px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Starter Section Section
+--------------------------------------------------------------*/
+.starter-section {
+  /* Add your styles here */
+}
+
+
+
+.jumbotron {
+ /* background-image: url('assets/hero-bg.png');*/
+  background-size: cover;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.jumbotron h1 {
+  font-size: 3.5rem;
+}
+
+.jumbotron p {
+  font-size: 1.5rem;
+}
+
+.jumbotron .btn {
+  font-size: 1.25rem;
+}
+
+/* Section styles */
+.section {
+  padding: 4rem 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-content {
+  margin-top: 2rem;
+}
+
+/* Card styles */
+.card {
+  border: none;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-text {
+  font-size: 1.2rem;
+}
+
+/* Testimonials styles */
+.testimonial {
+  background-color: #343a40;
+  padding: 4rem 0;
+  color: #fff;
+}
+
+.testimonial blockquote {
+  border-left: 5px solid #fff;
+}
+
+.testimonial blockquote footer {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Contact styles */
+.contact-form {
+  margin-top: 4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.contact-form button {
+  font-size: 1.2rem;
+}

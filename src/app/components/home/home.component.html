@@ -1,280 +1,398 @@
-<!-- home.component.html -->
- <section id="hero" class="hero section">
-    <div class="container-fluid position-relative">
-      <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
-      </div><!-- End Welcome -->
-      <div class="content row gy-4">
-        <div class="col-lg-4 d-flex align-items-stretch">
-          <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
-            <h3>Why Choose Medilab?</h3>
-            <p>
-              We provide comprehensive tools and services for monitoring and managing diabetes, helping you maintain
-              your health and well-being. Our platform offers personalized insights and recommendations based on your
-              data.
-            </p>
-            <div class="text-center">
-              <a href="#about" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
-            </div>
-          </div>
-        </div><!-- End Why Box -->
-        <div class="col-lg-8 d-flex align-items-stretch">
-          <div class="d-flex flex-column justify-content-center">
-            <div class="row gy-4">
-              <div class="col-xl-4 d-flex align-items-stretch">
-                <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
-                  <i class="bi bi-heart"></i>
-                  <h4>Personalized Glycemia Tracking</h4>
-                  <p>Monitor your blood sugar levels with easy-to-use tools and get personalized insights and trends to help manage your diabetes effectively.</p>
-                </div>
-              </div><!-- End Icon Box -->
-              <div class="col-xl-4 d-flex align-items-stretch">
-                <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
-                  <i class="bi bi-apple"></i>
-                  <h4>Nutrition and Diet Plans</h4>
-                  <p>Access tailored meal plans and nutrition advice to help you maintain a healthy diet and manage your blood sugar levels effectively.</p>
-                </div>
-              </div><!-- End Icon Box -->
-              <div class="col-xl-4 d-flex align-items-stretch">
-                <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
-                  <i class="bi bi-activity"></i>
-                  <h4>Exercise and Fitness Programs</h4>
-                  <p>Engage in customized exercise routines designed to improve your overall health and support your diabetes management goals.</p>
-                </div>
-              </div><!-- End Icon Box -->
-            </div>
-          </div>
-        </div>
-      </div><!-- End Content -->
-    </div>
-  </section><!-- /Hero Section -->
+<!--
+<section id="hero" class="hero section">
 
-  <!-- About Section -->
-  <section id="about" class="about section">
-    <div class="container">
-      <div class="row gy-4 gx-5">
-        <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
-          <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
-        </div>
-        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-          <h3>About Us</h3>
+  <img ngSrc="assets/hero-bg.png" alt="" data-aos="fade-in" fill>
+
+  <div class="container position-relative">
+
+    <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+      <h2>WELCOME TO MEDILAB</h2>
+      <p>We are a team of talented designers making websites with Bootstrap</p>
+    </div>
+
+    <div class="content row gy-4">
+      <div class="col-lg-4 d-flex align-items-stretch">
+        <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+          <h3>Why Choose Medilab?</h3>
           <p>
-            Welcome to Medilab, your trusted partner in managing and monitoring diabetes. Our mission is to provide you with the tools and support you need to maintain a healthy and balanced lifestyle.
+            We provide comprehensive tools and services for monitoring and managing diabetes, helping you maintain your health and well-being. Our platform offers personalized insights and recommendations based on your data.
           </p>
-          <ul>
-            <li>
-              <i class="fa-solid fa-vial-circle-check"></i>
-              <div>
-                <h5>Comprehensive Glycemia Tracking</h5>
-                <p>Track your blood sugar levels with ease and accuracy. Our system helps you understand your readings and trends over time.</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-pump-medical"></i>
-              <div>
-                <h5>Personalized Diet and Nutrition Plans</h5>
-                <p>Receive customized meal plans and nutritional advice tailored to your specific needs, helping you manage your diabetes effectively.</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-heart-circle-xmark"></i>
-              <div>
-                <h5>Exercise and Activity Monitoring</h5>
-                <p>Engage in suitable exercise routines and track your physical activity to support your overall health and diabetes management.</p>
-              </div>
-            </li>
-          </ul>
+          <div class="text-center">
+            <a href="#about" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-  </section><!-- /About Section -->
 
-  <!-- Other sections follow... -->
+      <div class="col-lg-8 d-flex align-items-stretch">
+        <div class="d-flex flex-column justify-content-center">
+          <div class="row gy-4">
 
-  <!-- Services Section -->
-  <section id="services" class="services section">
-
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Our Services</h2>
-      <p>Discover our services to better manage and monitor your diabetes.</p>
-    </div><!-- End Section Title -->
-
-    <div class="container">
-
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-item position-relative">
-            <div class="icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <a [routerLink]="['/glycemies']" class="stretched-link">
-              <h3>Glycemia Tracking</h3>
-            </a>
-            <p>Track and record your blood sugar levels for better management.</p>
-          </div>
-        </div><!-- End Service Item -->
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-item position-relative">
-            <div class="icon">
-              <i class="fas fa-dumbbell"></i>
-            </div>
-            <a class="stretched-link">
-              <h3>Exercise</h3>
-            </a>
-            <p>Exercise programs designed to keep you in good physical shape.</p>
-          </div>
-        </div><!-- End Service Item -->
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-          <div class="service-item position-relative">
-            <div class="icon">
-              <i class="fas fa-apple-alt"></i>
-            </div>
-            <a class="stretched-link">
-              <h3>Foods</h3>
-            </a>
-            <p>Information on healthy foods for a balanced diet.</p>
-          </div>
-        </div><!-- End Service Item -->
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-          <div class="service-item position-relative">
-            <div class="icon">
-              <i class="fas fa-file-alt"></i>
-            </div>
-            <a [routerLink]="['/generateRapport']" class="stretched-link">
-              <h3>Diabetics</h3>
-            </a>
-            <p>Discover our diabetics.</p>
-          </div>
-        </div><!-- End Service Item -->
-      </div>
-    </div>
-  </section><!-- /Services Section -->
-
-  <!-- faq.component.html -->
-  <section id="faq" class="faq section">
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Frequently Asked Questions</h2>
-      <p>Here are some common questions and answers to help you understand more about our services.</p>
-    </div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-          <div class="faq-container">
-            <div class="faq-item faq-active">
-              <h3>What is diabetes monitoring and why is it important?</h3>
-              <div class="faq-content">
-                <p>Diabetes monitoring involves regularly checking your blood glucose levels to manage and control diabetes effectively. It helps prevent complications and ensures you stay healthy.</p>
+            <div class="col-xl-4 d-flex align-items-stretch">
+              <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+                <i class="bi bi-heart"></i>
+                <h4>Personalized Glycemia Tracking</h4>
+                <p>Monitor your blood sugar levels with easy-to-use tools and get personalized insights and trends to help manage your diabetes effectively.</p>
               </div>
-              <i class="faq-toggle bi bi-chevron-right"></i>
             </div>
-            <div class="faq-item">
-              <h3>How can I monitor my blood glucose levels?</h3>
-              <div class="faq-content">
-                <p>You can monitor your blood glucose levels using a glucose meter. It involves pricking your finger to draw a small drop of blood, which is then placed on a test strip and inserted into the meter for measurement.</p>
+
+            <div class="col-xl-4 d-flex align-items-stretch">
+              <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+                <i class="bi bi-apple"></i>
+                <h4>Nutrition and Diet Plans</h4>
+                <p>Access tailored meal plans and nutrition advice to help you maintain a healthy diet and manage your blood sugar levels effectively.</p>
               </div>
-              <i class="faq-toggle bi bi-chevron-right"></i>
             </div>
-            <div class="faq-item">
-              <h3>What are the symptoms of high blood sugar?</h3>
-              <div class="faq-content">
-                <p>Common symptoms of high blood sugar (hyperglycemia) include increased thirst, frequent urination, fatigue, blurred vision, and slow healing of wounds.</p>
+
+            <div class="col-xl-4 d-flex align-items-stretch">
+              <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+                <i class="bi bi-activity"></i>
+                <h4>Exercise and Fitness Programs</h4>
+                <p>Engage in customized exercise routines designed to improve your overall health and support your diabetes management goals.</p>
               </div>
-              <i class="faq-toggle bi bi-chevron-right"></i>
             </div>
-            <div class="faq-item">
-              <h3>How can I manage my diabetes through diet?</h3>
-              <div class="faq-content">
-                <p>Managing diabetes through diet involves eating a balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats. It's important to monitor carbohydrate intake and avoid sugary foods and drinks.</p>
-              </div>
-              <i class="faq-toggle bi bi-chevron-right"></i>
-            </div>
-            <div class="faq-item">
-              <h3>Is exercise beneficial for managing diabetes?</h3>
-              <div class="faq-content">
-                <p>Yes, regular physical activity can help lower blood sugar levels, improve insulin sensitivity, and manage weight. Aim for at least 150 minutes of moderate-intensity aerobic activity per week, along with muscle-strengthening exercises.</p>
-              </div>
-              <i class="faq-toggle bi bi-chevron-right"></i>
-            </div>
-            <div class="faq-item">
-              <h3>Where can I find support for managing my diabetes?</h3>
-              <div class="faq-content">
-                <p>You can find support through diabetes education programs, support groups, and online communities. These resources provide information, encouragement, and practical tips for managing diabetes effectively.</p>
-              </div>
-              <i class="faq-toggle bi bi-chevron-right"></i>
-            </div>
+
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- contact.component.html -->
-  <section id="contact" class="contact section">
+  </div>
 
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Contact</h2>
-      <p>For any questions or inquiries, feel free to contact us.</p>
-    </div>
+</section>
+<section id="about" class="about section">
 
-    <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
-      <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+  <div class="container">
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row gy-4">
-        <div class="col-lg-4">
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <i class="bi bi-geo-alt flex-shrink-0"></i>
+    <div class="row gy-4 gx-5">
+
+      <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+        <img ngSrc="assets/about.jpg" data-aos="fade-in" fill priority alt="">
+
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+      </div>
+
+      <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+        <h3>About Us</h3>
+        <p>
+          Welcome to Medilab, your trusted partner in managing and monitoring diabetes. Our mission is to provide you with the tools and support you need to maintain a healthy and balanced lifestyle.
+        </p>
+        <ul>
+          <li>
+            <i class="fa-solid fa-vial-circle-check"></i>
             <div>
-              <h3>Location</h3>
-              <p>A108 Beni Mellal, Morocco, BM 535022</p>
+              <h5>Comprehensive Glycemia Tracking</h5>
+              <p>Track your blood sugar levels with ease and accuracy. Our system helps you understand your readings and trends over time.</p>
             </div>
-          </div>
-
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <i class="bi bi-telephone flex-shrink-0"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-pump-medical"></i>
             <div>
-              <h3>Call Us</h3>
-              <p>+1 1111 11111 11</p>
+              <h5>Personalized Diet and Nutrition Plans</h5>
+              <p>Receive customized meal plans and nutritional advice tailored to your specific needs, helping you manage your diabetes effectively.</p>
             </div>
-          </div>
-
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <i class="bi bi-envelope flex-shrink-0"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-heart-circle-xmark"></i>
             <div>
-              <h3>Email Us</h3>
-              <p>medilab&#64;diabete.com</p>
+              <h5>Exercise and Activity Monitoring</h5>
+              <p>Engage in suitable exercise routines and track your physical activity to support your overall health and diabetes management.</p>
             </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section id="services" class="services section">
+
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Our Services</h2>
+    <p>Discover our services to better manage and monitor your diabetes.</p>
+  </div>
+
+  <div class="container">
+
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-chart-line"></i>
           </div>
+          <a [routerLink]="['/glycemies']" class="stretched-link">
+            <h3>Glycemia Tracking</h3>
+          </a>
+          <p>Track and record your blood sugar levels for better management.</p>
         </div>
+      </div>
 
-        <div class="col-lg-8">
-          <form action="" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-              </div>
-              <div class="col-md-6">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-              </div>
-              <div class="col-md-12">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-              </div>
-              <div class="col-md-12">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-              </div>
-              <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-                <button type="submit">Send Message</button>
-              </div>
-            </div>
-          </form>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-dumbbell"></i>
+          </div>
+          <a class="stretched-link">
+            <h3>Exercise</h3>
+          </a>
+          <p>Exercise programs designed to keep you in good physical shape.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-apple-alt"></i>
+          </div>
+          <a class="stretched-link">
+            <h3>Foods</h3>
+          </a>
+          <p>Information on healthy foods for a balanced diet.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <a [routerLink]="['/generateRapport']" class="stretched-link">
+            <h3>Diabetics</h3>
+          </a>
+          <p>Discover our diabetics.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section id="faq" class="faq section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Frequently Asked Questions</h2>
+    <p>Here are some common questions and answers to help you understand more about our services.</p>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+        <div class="faq-container">
+          <div class="faq-item faq-active">
+            <h3>What is diabetes monitoring and why is it important?</h3>
+            <div class="faq-content">
+              <p>Diabetes monitoring involves regularly checking your blood glucose levels to manage and control diabetes effectively. It helps prevent complications and ensures you stay healthy.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+          <div class="faq-item">
+            <h3>How can I monitor my blood glucose levels?</h3>
+            <div class="faq-content">
+              <p>You can monitor your blood glucose levels using a glucose meter. It involves pricking your finger to draw a small drop of blood, which is then placed on a test strip and inserted into the meter for measurement.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+          <div class="faq-item">
+            <h3>What are the symptoms of high blood sugar?</h3>
+            <div class="faq-content">
+              <p>Common symptoms of high blood sugar (hyperglycemia) include increased thirst, frequent urination, fatigue, blurred vision, and slow healing of wounds.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+          <div class="faq-item">
+            <h3>How can I manage my diabetes through diet?</h3>
+            <div class="faq-content">
+              <p>Managing diabetes through diet involves eating a balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats. It's important to monitor carbohydrate intake and avoid sugary foods and drinks.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+          <div class="faq-item">
+            <h3>Is exercise beneficial for managing diabetes?</h3>
+            <div class="faq-content">
+              <p>Yes, regular physical activity can help lower blood sugar levels, improve insulin sensitivity, and manage weight. Aim for at least 150 minutes of moderate-intensity aerobic activity per week, along with muscle-strengthening exercises.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+          <div class="faq-item">
+            <h3>Where can I find support for managing my diabetes?</h3>
+            <div class="faq-content">
+              <p>You can find support through diabetes education programs, support groups, and online communities. These resources provide information, encouragement, and practical tips for managing diabetes effectively.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact section">
+
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>For any questions or inquiries, feel free to contact us.</p>
+  </div>
+
+  <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+    <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Location</h3>
+            <p>A108 Beni Mellal, Morocco, BM 535022</p>
+          </div>
+        </div>
+
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Call Us</h3>
+            <p>+1 1111 11111 11</p>
+          </div>
+        </div>
+
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Email Us</h3>
+            <p>medilab&#64;diabete.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <form action="" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+              <button type="submit">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+-->
+<div class="jumbotron jumbotron-fluid bg-primary text-white">
+  <div class="container">
+    <h1 class="display-3">Bienvenue sur notre application de suivi du diabète</h1>
+    <p class="lead">Cette application vous permet de gérer vos lectures de glycémie et de suivre vos progrès.</p>
+    <hr class="my-4">
+    <p>Commencez par enregistrer vos lectures pour voir les tendances au fil du temps.</p>
+    <a class="btn btn-light btn-lg" routerLink="/glycemie" role="button">Voir mes glycémies</a>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>À propos de l'application</h2>
+      <p>Cette application a été conçue pour vous aider à mieux gérer votre diabète en suivant régulièrement vos lectures de glycémie. Elle offre des fonctionnalités avancées pour analyser vos données et ajuster votre traitement.</p>
+      <p>Vous pouvez également suivre vos conseils médicaux et consulter des informations importantes sur votre état de santé.</p>
+    </div>
+    <div class="col-md-6">
+      <h2>Comment commencer</h2>
+      <p>Pour commencer, enregistrez-vous et ajoutez vos premières lectures de glycémie. Utilisez les graphiques interactifs pour visualiser vos tendances et ajuster votre plan de traitement si nécessaire.</p>
+      <p>Explorez les différentes fonctionnalités disponibles dans le menu pour gérer efficacement votre suivi diabétique.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="my-5">
+  <h2 class="text-center mb-4">Fonctionnalités principales</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Suivi des glycémies</h5>
+          <p class="card-text">Enregistrez vos lectures de glycémie et suivez vos progrès au fil du temps à l'aide de graphiques interactifs.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Conseils médicaux</h5>
+          <p class="card-text">Consultez des conseils médicaux personnalisés pour mieux gérer votre diabète et améliorer votre santé.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Analyse avancée</h5>
+          <p class="card-text">Utilisez les outils d'analyse avancée pour comprendre vos données de glycémie et prendre des décisions informées.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-secondary text-white py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Témoignages de nos utilisateurs</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <blockquote class="blockquote">
+          <p class="mb-0">"Cette application a vraiment simplifié la gestion de mon diabète. Je peux voir mes données instantanément et cela m'aide à ajuster mon traitement."</p>
+          <footer class="blockquote-footer">John Doe</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-6">
+        <blockquote class="blockquote">
+          <p class="mb-0">"Je recommande vivement cette application à tous ceux qui cherchent à mieux comprendre leur diabète et à le gérer efficacement."</p>
+          <footer class="blockquote-footer">Jane Smith</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Contactez-nous</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Pour toute question ou assistance supplémentaire, n'hésitez pas à nous contacter. Nous sommes là pour vous aider à tirer le meilleur parti de notre application.</p>
+      <p><strong>Adresse:</strong> 123 Rue de l'Exemple, Ville, Pays</p>
+      <p><strong>Téléphone:</strong> +123 456 789</p>
+      <p><strong>Email:</strong> contact&#64;diabetesapp.com</p>
+    </div>
+    <div class="col-md-6">
+      <form>
+        <div class="form-group">
+          <label for="name">Votre nom</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Votre email</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="message">Votre message</label>
+          <textarea class="form-control" id="message" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
