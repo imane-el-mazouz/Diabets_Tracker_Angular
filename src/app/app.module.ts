@@ -9,6 +9,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChartComponent } from './components/chart/chart.component';
+import {HomeComponent} from "./components/home/home.component";
+
 @NgModule({
   declarations: [
 
@@ -17,6 +19,7 @@ import { ChartComponent } from './components/chart/chart.component';
   imports: [
     NavbarComponent,
     FooterComponent,
+    HomeComponent,
     ChartComponent
   ],
   providers: [],

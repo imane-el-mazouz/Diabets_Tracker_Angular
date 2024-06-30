@@ -5,6 +5,7 @@ import {GlycemieListComponent} from "./glycemie-list/glycemie-list.component";
 import {GlycemieFormComponent} from "./glycemie-form/glycemie-form.component";
 import {UpdateGlycemieFormComponent} from "./update-glycemie-form/update-glycemie-form.component";
 import {UpdateUserFormComponent} from "./update-user-form/update-user-form.component";
+import {HomeComponent} from "./components/home/home.component";
 
 export const routes: Routes = [
   { path: 'users', component: UserListComponent },
@@ -14,5 +15,6 @@ export const routes: Routes = [
   { path: 'addGlycemie', component: GlycemieFormComponent },
   { path: 'update-glycemie/:id', component: UpdateGlycemieFormComponent },
   { path: 'update-user/:id', component: UpdateUserFormComponent },
-  { path: '', redirectTo: '/glycemies', pathMatch: 'full' }
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
