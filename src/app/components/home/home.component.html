@@ -1,4 +1,4 @@
-<!--
+
 <section id="hero" class="hero section">
 
   <img ngSrc="assets/hero-bg.png" alt="" data-aos="fade-in" fill>
@@ -15,7 +15,7 @@
         <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
           <h3>Why Choose Medilab?</h3>
           <p>
-            We provide comprehensive tools and services for monitoring and managing diabetes, helping you maintain your health and well-being. Our platform offers personalized insights and recommendations based on your data.
+            Always with you !
           </p>
           <div class="text-center">
             <a href="#about" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
@@ -66,8 +66,7 @@
     <div class="row gy-4 gx-5">
 
       <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
-        <img ngSrc="assets/about.jpg" data-aos="fade-in" fill priority alt="">
-
+        <img src="assets/about.jpg" class="img-fluid" style="max-width: 100%; height: auto;" data-aos="fade-in" fill priority alt="">
         <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
       </div>
 
@@ -127,19 +126,6 @@
           <p>Track and record your blood sugar levels for better management.</p>
         </div>
       </div>
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="fas fa-dumbbell"></i>
-          </div>
-          <a class="stretched-link">
-            <h3>Exercise</h3>
-          </a>
-          <p>Exercise programs designed to keep you in good physical shape.</p>
-        </div>
-      </div>
-
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
         <div class="service-item position-relative">
           <div class="icon">
@@ -151,13 +137,12 @@
           <p>Information on healthy foods for a balanced diet.</p>
         </div>
       </div>
-
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="fas fa-file-alt"></i>
           </div>
-          <a [routerLink]="['/generateRapport']" class="stretched-link">
+          <a [routerLink]="['/users']" class="stretched-link">
             <h3>Diabetics</h3>
           </a>
           <p>Discover our diabetics.</p>
@@ -291,108 +276,5 @@
   </div>
 
 </section>
--->
-<div class="jumbotron jumbotron-fluid bg-primary text-white">
-  <div class="container">
-    <h1 class="display-3">Bienvenue sur notre application de suivi du diabète</h1>
-    <p class="lead">Cette application vous permet de gérer vos lectures de glycémie et de suivre vos progrès.</p>
-    <hr class="my-4">
-    <p>Commencez par enregistrer vos lectures pour voir les tendances au fil du temps.</p>
-    <a class="btn btn-light btn-lg" routerLink="/glycemie" role="button">Voir mes glycémies</a>
-  </div>
-</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <h2>À propos de l'application</h2>
-      <p>Cette application a été conçue pour vous aider à mieux gérer votre diabète en suivant régulièrement vos lectures de glycémie. Elle offre des fonctionnalités avancées pour analyser vos données et ajuster votre traitement.</p>
-      <p>Vous pouvez également suivre vos conseils médicaux et consulter des informations importantes sur votre état de santé.</p>
-    </div>
-    <div class="col-md-6">
-      <h2>Comment commencer</h2>
-      <p>Pour commencer, enregistrez-vous et ajoutez vos premières lectures de glycémie. Utilisez les graphiques interactifs pour visualiser vos tendances et ajuster votre plan de traitement si nécessaire.</p>
-      <p>Explorez les différentes fonctionnalités disponibles dans le menu pour gérer efficacement votre suivi diabétique.</p>
-    </div>
-  </div>
-</div>
 
-<div class="container">
-  <hr class="my-5">
-  <h2 class="text-center mb-4">Fonctionnalités principales</h2>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title">Suivi des glycémies</h5>
-          <p class="card-text">Enregistrez vos lectures de glycémie et suivez vos progrès au fil du temps à l'aide de graphiques interactifs.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title">Conseils médicaux</h5>
-          <p class="card-text">Consultez des conseils médicaux personnalisés pour mieux gérer votre diabète et améliorer votre santé.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title">Analyse avancée</h5>
-          <p class="card-text">Utilisez les outils d'analyse avancée pour comprendre vos données de glycémie et prendre des décisions informées.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid bg-secondary text-white py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">Témoignages de nos utilisateurs</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <blockquote class="blockquote">
-          <p class="mb-0">"Cette application a vraiment simplifié la gestion de mon diabète. Je peux voir mes données instantanément et cela m'aide à ajuster mon traitement."</p>
-          <footer class="blockquote-footer">John Doe</footer>
-        </blockquote>
-      </div>
-      <div class="col-md-6">
-        <blockquote class="blockquote">
-          <p class="mb-0">"Je recommande vivement cette application à tous ceux qui cherchent à mieux comprendre leur diabète et à le gérer efficacement."</p>
-          <footer class="blockquote-footer">Jane Smith</footer>
-        </blockquote>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container mt-5">
-  <h2 class="text-center mb-4">Contactez-nous</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <p>Pour toute question ou assistance supplémentaire, n'hésitez pas à nous contacter. Nous sommes là pour vous aider à tirer le meilleur parti de notre application.</p>
-      <p><strong>Adresse:</strong> 123 Rue de l'Exemple, Ville, Pays</p>
-      <p><strong>Téléphone:</strong> +123 456 789</p>
-      <p><strong>Email:</strong> contact&#64;diabetesapp.com</p>
-    </div>
-    <div class="col-md-6">
-      <form>
-        <div class="form-group">
-          <label for="name">Votre nom</label>
-          <input type="text" class="form-control" id="name">
-        </div>
-        <div class="form-group">
-          <label for="email">Votre email</label>
-          <input type="email" class="form-control" id="email">
-        </div>
-        <div class="form-group">
-          <label for="message">Votre message</label>
-          <textarea class="form-control" id="message" rows="5"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-      </form>
-    </div>
-  </div>
-</div>

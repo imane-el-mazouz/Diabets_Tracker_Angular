@@ -16,6 +16,7 @@ import {Observable} from "rxjs";
   imports: [CommonModule, RouterOutlet, RouterLink, ChartComponent ,FormsModule]
 })
 export class GlycemieListComponent  implements OnInit{
+  name : string = "hhh";
   glycemies :Glycemie[] = [];
 
   constructor(private glycemieService : GlycemieService) {}

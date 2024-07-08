@@ -11,6 +11,8 @@
           <th scope="col">Date</th>
           <th scope="col">MealTime</th>
           <th scope="col">Source</th>
+          <th scope="col">name</th>
+
           <th scope="col">Actions</th>
         </tr>
         </thead>
@@ -22,6 +24,8 @@
           <td>{{ glycemie.date}}</td>
           <td>{{ glycemie.mealTime}}</td>
           <td>{{ glycemie.source}}</td>
+          <td>{{ name}}</td>
+
           <td>
             <button class="btn btn-danger" type="button" (click)="deleteGlycemie(glycemie.id)">Delete</button>
             <a class="btn btn-primary" [routerLink]="['/update-glycemie', glycemie.id]">Update Glycemie</a>

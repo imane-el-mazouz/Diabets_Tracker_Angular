@@ -83,7 +83,6 @@ export class ChartComponent implements AfterViewInit, OnChanges {
     Chart.register(...registerables);
     Chart.register(LinearScale);
 
-    // Initialize chartInstance
     this.chartInstance = undefined;
   }
 
@@ -108,20 +107,20 @@ export class ChartComponent implements AfterViewInit, OnChanges {
     }
 
     this.chartInstance = new Chart(ctx, {
-      type: 'bar', // Utilisation du type de graphique 'bar' pour les colonnes individuelles
+      type: 'bar',
       data: {
-        labels: this.glycemies.map(g => g.date.toISOString()), // Utilisation de la date pour les labels
+        labels: this.glycemies.map(g => g.date.toISOString()),
         datasets: [{
-          label: 'Valeurs de glycémie',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: this.glycemies.map(g => g.value), // Utilisation de la valeur de glycémie pour les données
+          label: 'Glycemia Records',
+          backgroundColor: '#1977CCFF',
+          borderColor: '#1977CCFF',
+          data: this.glycemies.map(g => g.value),
         }]
       },
       options: {
         scales: {
           y: {
-            beginAtZero: true // Commence à zéro sur l'axe y
+            beginAtZero: true
           }
         }
       }

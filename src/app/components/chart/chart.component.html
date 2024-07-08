@@ -1,1 +1,38 @@
-<canvas id="myChart"></canvas>
+<div class="container d-flex align-items-center justify-content-between flex-wrap" data-aos="fade-up" data-aos-delay="100">
+  <div class="chart-container mb-4">
+    <canvas id="myChart" class="w-100"></canvas>
+  </div>
+  <div class="chart-controls">
+    <h5 class="text-center">Color Indicators</h5>
+    <div class="color-indicators d-flex flex-column align-items-start">
+      <div class="color-indicator d-flex align-items-center">
+        <div class="color-box" style="background-color: rgba(255, 99, 132);"></div>
+        <span>Severe Hypoglycemia (&lt; 54)</span>
+      </div>
+      <div class="color-indicator d-flex align-items-center">
+        <div class="color-box" style="background-color: rgba(255, 159, 64);"></div>
+        <span>Moderate Hypoglycemia (54 - 70)</span>
+      </div>
+      <div class="color-indicator d-flex align-items-center">
+        <div class="color-box" style="background-color: rgba(54, 162, 235);"></div>
+        <span>Low Normal (70 - 90)</span>
+      </div>
+      <div class="color-indicator d-flex align-items-center">
+        <div class="color-box" style="background-color: rgba(75, 192, 192);"></div>
+        <span>Normal (90 - 110)</span>
+      </div>
+      <div class="color-indicator d-flex align-items-center">
+        <div class="color-box" style="background-color: rgba(153, 102, 255);"></div>
+        <span>High Normal (110 - 140)</span>
+      </div>
+      <div class="color-indicator d-flex align-items-center">
+        <div class="color-box" style="background-color: rgba(255, 206, 86);"></div>
+        <span>Moderate Hyperglycemia (140 - 180)</span>
+      </div>
+      <div class="color-indicator d-flex align-items-center">
+        <div class="color-box" style="background-color: rgba(255, 99, 132);"></div>
+        <span>Severe Hyperglycemia (&gt; 180)</span>
+      </div>
+    </div>
+  </div>
+</div>
